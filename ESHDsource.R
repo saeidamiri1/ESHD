@@ -88,3 +88,12 @@ prslasso<-function(MO0,Xtest){
   colnames(out0)<-c('Estimate',"lower CI","upper CI")
   return(out0)
 }
+
+
+predict <- function(model, ...) {
+  UseMethod("predict")
+}
+
+
+predict.default <- function(model, 
+           data) prslasso(model,data)
